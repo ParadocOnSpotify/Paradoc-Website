@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Lane Burcham Portfolio Website</title>
+    <!-- where we'd put a normalize href link, google it, makes it easier to work with all websites -->
+    <!-- scrimba stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.win.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfr0j+BmwXdxFgVK/Kvc=" crossorigin="anonymous">      
+
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">     <!-- may need extra link or source for this font to show up, wait to see if it plays out -->
+    <link rel="stylesheet2" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/0f33447b4b.js" crossorigin="anonymous"></script>       <!-- the link reference to allow the social icons to show up -->
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <header>
+        <div class="logo">      <!-- we put this image in a div in case we might want to set this up as an svg, google svg -->
+            <img src="media/PS Cover.JPG" alt="PS Cover">   <!-- logo image -->
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">  <!-- this is our nav button to open and close our navigation bar/hamburger button, also, aria-label describes what this button is being used for, important for accessibility reasons -->
+            <span class="hamburger"></span>                        <!-- this will be our hamburger button itself-->
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">          <!-- using underscores implies this is a subcomponent (child) of the parent class "nav" -->
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="aboutme.html" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="#mywork.html" class="nav__link">My Work</a></li>            <!-- in case you get stuck redirecting to certain parts of the page remember this = "the section itself needs an id="top" or id="bottom" and the link itself, aka <a> needs an href="top" or href="bottom" -->
+            </ul>                                                                                   <!-- another example of the statement above, the links href = #home will take you to the home section of the page because that section has an id of home -->
+        </nav>
+    </header>
+
+
+
+<!--            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+-->
+
+
+
+
+
+
+    <!-- Introduction -->
+
+    <section class="intro" id="home">               <!-- he mainly uses classes for styling and id's for anchoring, aka taking you to certain parts of the page -->
+        <h1 class="section__title section__title--intro">
+            Hi, I am <strong>Lane</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">front-end jr dev</p>
+        <img src="media/IMG_4120.jpg" alt="PFF Cover" class="intro__img">
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- My Services -->
+
+    <section class="my-services" id="services">             <!-- once you make this section tag, we need a title and 3 columns -->
+        <h2 class="section__title section__title--services">What I do</h2>
+        <div class="services">  <!-- / services -->
+
+            <div class="service">
+                <h3>Design + Development</h3>
+                <p id="dndtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa architecto laborum consectetur molestias nam, iusto veritatis officiis expedita praesentium sapiente eligendi. Necessitatibus autem cumque, consequatur ratione eveniet repudiandae ad vero.</p>
+            </div>  <!-- / service -->
+
+            <div class="service">
+                <h3>E-Commerce</h3>
+                <p id="ecommercetext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa architecto laborum consectetur molestias nam, iusto veritatis officiis expedita praesentium sapiente eligendi. Necessitatibus autem cumque, consequatur ratione eveniet repudiandae ad vero.</p>
+            </div>  <!-- / service -->
+
+            <div class="service">
+                <h3>WordPress</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa architecto laborum consectetur molestias nam, iusto veritatis officiis expedita praesentium sapiente eligendi. Necessitatibus autem cumque, consequatur ratione eveniet repudiandae ad vero.</p>
+            </div>  <!-- / service -->
+
+        </div>  <!-- / services -->
+
+        <a href="#work" class="btn" onclick="myFunction()">My Work</a>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- About Me -->
+
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about"></p>    <!-- this p tag is the green line on the screen lmao -->
+
+        <div class="about-me__body">
+            <p>My name is Lane Burcham, I'm 26 years old, I'm from Memphis, TN (901 Gang) and this is my personal website!</p>
+            <p>I created this website as practice for my web development skills. I may not know where I'm headed with all of this but the money's worth giving it a try ;)</p>
+        </div>
+
+        <img src="media/new fade.JPG" alt="new fade" class="about-me__img">
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- My Work -->
+
+    <section class="my-work" id="work">
+        <h2 class="section__title section__subtitle--singles">Singles</h2>
+        <!-- <p class="section__subtitle">A selection of my range of work</p> -->
+
+        <div class="portfolio">
+            <a href="https://www.youtube.com/watch?v=Ba9TuSmvZj8" class="portfolio__item">
+                <img src="media/PS Cover.JPG" alt="" class="portfolio__img">
+            </a>
+            <a href="https://www.youtube.com/watch?v=-DsznW9qbTs" class="portfolio__item">
+                <img src="media/gimme one reason cover.jpg" alt="" class="portfolio__img">
+            </a>
+            <a href="https://www.youtube.com/watch?v=RfthQONZTf0" class="portfolio__item">
+                <img src="media/PFF Cover.JPG" alt="" class="portfolio__img">
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- class="section__title" back to h2 monthly budget -->
+
+
+
+    <!-- Monthly Budget Table -->
+    <section class="budget-table-section" id="budget-section">
+        <h2 class="section__title section__title--monthly_budget">Monthly Budget</h2>
+        <table class="mb-table">
+          <tr class="table-headers-row">
+            <th>Activity</th>
+            <th>Cost</th>
+            <th>Occurence</th>
+            <th>Priority</th>
+          </tr>
+            <tr class="table-data-row">
+              <td>Rent</td>
+              <td>$828</td>
+              <td>1st-5th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Utilities</td>
+              <td>$50</td>
+              <td>22nd of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Phone Bill</td>
+              <td>$90</td>
+              <td>3rd of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Bright Healthcare</td>
+              <td>$70</td>
+              <td>14th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Delta Dental</td>
+              <td>$38</td>
+              <td>14th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Xfinity Internet</td>
+              <td>$30</td>
+              <td>17th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Credit Card</td>
+              <td>$30</td>
+              <td>20th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>eRenters Insurance</td>
+              <td>$30</td>
+              <td>19th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Gas</td>
+              <td>$160</td>
+              <td>20th of every month</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Food</td>
+              <td>$560</td>
+              <td>Daily</td>
+              <td>High</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Cigs</td>
+              <td>$32</td>
+              <td>1 pack every week</td>
+              <td>Low</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Youtube Premium</td>
+              <td>$13</td>
+              <td>7th of every month</td>
+              <td>Mid</td>
+            </tr>
+            <tr class="activity-row">
+              <td>Paramount+</td>
+              <td>$10</td>
+              <td>25th of every month</td>
+              <td>Mid</td>
+            </tr>
+          </table>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Stopwatch -->
+    <section class="stopwatch-section">
+      <h2 class="section__title">Stopwatch</h2>
+      <h2 class="section__subtitle">Vanilla Javascript Stopwatch</h2>
+      <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+      <button class="btn" id="button-start">Start</button>
+      <button class="btn" id="button-stop">Stop</button>
+      <button class="btn" id="button-reset">Reset</button>
+    </section>
+
+
+
+
+    <!-- Calculator -->
+      <div class="calculator">
+        <div class="input" id="input"></div>  <!-- input box at top of calculator -->
+        <div class="buttons"> <!-- all the numbers and buttons class-->
+          <div class="operators">
+            <div>+</div>
+            <div>-</div>
+            <div>&times;</div>
+            <div>&divide;</div>
+          </div>
+          <div class="left-panel">
+            <div class="numbers">
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+            </div>
+            <div class="numbers">
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            <div class="numbers">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+            </div>
+            <div class="numbers">
+              <div>0</div>
+              <div>.</div>
+              <div id="clear">C</div>
+            </div>
+          </div>
+          <div class="equal" id="result">=</div>
+        </div>
+      </div>
+      
+
+      
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="laneaburcham@gmail.com" class="footer-link">laneaburcham@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item"><a class="social-list__link" href="https://www.facebook.com/lane.burcham.5/"><i class="fab fa-facebook"></i></a></li>      <!-- "fab" stands for "font-awesome-brand" -->
+            <li class="social-list__item"><a class="social-list__link" href="https://www.instagram.com/banelurcham/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/dlb_0"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.tiktok.com/@laneburcham?lang=en"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+
+        <p>Click the button below to print this page!</p>
+        <button class="btn" onclick="print_current_page()">Print this page</button>
+    </footer>
+
+    <script src="../index.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
+
+<!-- 2:11:00 in Build and Deploy a portfolio website Digital Ocean and its droplets are virtual servers that you pay for under the amount of time that droplet or virtual server is owned -->
+
+

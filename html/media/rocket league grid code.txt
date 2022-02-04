@@ -1,0 +1,190 @@
+<!-- <div>
+  <nav>
+    <label class="logo">Paradoc</label>
+    <ul class="navbar" type="none">
+      <li class="navitem"><a class="active" href="#">Home</a></li>
+      <li class="navitem"><a class="active" href="#">About</a></li>
+      <li class="navitem"><a class="active" href="#">Donate</a></li>
+      <li class="navitem"><a class="active" href="#">Contact</a></li>
+      <li class="navitem"><a class="active" href="#">Follow</a></li>
+    </ul>
+  </nav>
+</div> -->
+
+<!-- '<a href="https://www.example.com" target="_blank">Link</a>' target="_blank" opens new tab when link is clicked-->
+
+<div class="container">
+    <div class="navbar">
+      <img src="media/Logo.png" alt="ParadocLogo" class="logo" height="100px" width="100px">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SPECIFICATIONS</a></li>
+        <li><a href="#">PRODUCTS</a></li>
+        <li><a href="#">CONNECT</a></li>
+      </ul>
+    </div>
+</div>
+
+<div class="video-grid">
+  <div>
+    <video autoplay controls>
+      <source src="media/74mph laser in duos.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div>
+    <video autoplay controls>
+      <source src="media/fR in comp duos.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div>
+    <video autoplay controls>
+      <source src="media/fR 10.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div>
+    <video autoplay controls>
+      <source src="media/calculated.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div>
+    <video autoplay controls>
+      <source src="media/carrying flick.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div>
+    <video autoplay controls>
+      <source src="media/best dropshot so far.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</div>
+
+
+
+************************************************* CSS CODE ********************************************
+
+
+.container  {
+    height: 100vh;
+    width: 100%;
+    /* background-image: url(media/PS\ Cover.JPG);
+    background-size: cover;
+    background-position: center; */
+}
+
+.navbar {
+    width: 96%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: 3px solid red;
+}
+
+.logo   {
+    width: 100px;
+    cursor: pointer;
+    outline: 3px solid red;
+}
+
+.navbar ul li   {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.content    {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    justify-items: center;
+    outline: 3px solid red;
+}
+
+.single-covers   {
+    outline: 3px solid red;
+}
+
+.video-grid {
+    /* position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0px; */
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    outline: 3px solid red;
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.video-grid div video{
+    /* position: relative; */
+    height: 400px;
+    width: 400px;
+    padding-bottom: 20px;
+    outline: 3px solid orange;
+}
+
+.yt-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0px;
+}
+/* ^^^^this sets up the container of the div */
+
+.yt-wrapper iframe  {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding-top: 10px;
+    height: 25%;
+    width: 25%;
+}
+
+/* ^^^all the sides with 0px means 0 pixels FROM that respective side */
+/* .videowrapper   {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0px;
+}
+/*
+/* use above to create the plane of how big you want the box
+and use below to fill in that space with the 100% w/h */
+/*
+.videowrapper iframe    {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+} */
+
+/* by setting the padding-bottom to 56.25%, we add a height to the .videowrapper
+which scales according to its own width. By setting the padding to 56.25%,
+we then have a 16:9 scaling which is the size for videos */

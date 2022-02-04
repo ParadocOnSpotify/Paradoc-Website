@@ -1,0 +1,622 @@
+****************************************************** HTML *********************************************************** 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Paradoc Portfolio Website</title>
+    <!-- where we'd put a normalize href link, google it, makes it easier to work with all websites -->
+    <!-- scrimba stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.win.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfr0j+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">     <!-- may need extra link or source for this font to show up, wait to see if it plays out -->
+
+    <script src="https://kit.fontawesome.com/0f33447b4b.js" crossorigin="anonymous"></script>       <!-- the link reference to allow the social icons to show up -->
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">      <!-- we put this image in a div in case we might want to set this up as an svg, google svg -->
+            <img src="media/PS Cover.JPG" alt="PS Cover">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">  <!-- this is our nav button to open and close our navigation bar, also, aria-label describes what this button is being used for, important for accessibility reasons -->
+            <span class="hamburger"></span>                        <!-- this will be our hamburger button itself-->
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">          <!-- using underscores implies this is a subcomponent (child) of the parent class "nav" -->
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>            <!-- in case you get stuck redirecting to certain parts of the page remember this = "the section itself needs an id="top" or id="bottom" and the link itself, aka <a> needs an href="top" or href="bottom" -->
+            </ul>
+        </nav>
+    </header>
+
+<!-- portfolio template part below, added to original html index with just the intro section -->
+
+    <section class="intro" id="home">               <!-- he mainly uses classes for styling and id's for anchoring, google-->
+    <h1 class="section__title section__title--intro">
+        Hi, I am <strong>Paradoc</strong>
+    </h1>
+    <p class="section__subtitle section__subtitle--intro">front-end dev</p>
+    <img src="media/IMG_4120.jpg" alt="PFF Cover" class="intro__img">
+    </section>
+
+    <div class="poprtfolio-item-individual">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae praesentium vero quo veniam rem iusto, iure et repellendus numquam, non sed cumque reprehenderit, ipsa architecto maiores. Ad doloremque cupiditate nemo!</p>
+        <img src="media/PS Cover.JPG" alt="" class="intro__img">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, architecto id cupiditate eaque dolores non consequuntur repellat fugit laudantium perferendis harum deleniti recusandae quibusdam quos odio quam facilis aspernatur debitis?</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis fugiat adipisci repudiandae, sunt facilis mollitia ad incidunt esse at! Vero cum aut placeat voluptates, nam perspiciatis obcaecati sit ab.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="laneaburcham@gmail.com" class="footer-link">laneaburcham@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item"><a class="social-list__link" href="https://www.facebook.com/lane.burcham.5/"><i class="fab fa-facebook"></i></a></li>      <!-- "fab" stands for "font-awesome-brand" -->
+            <li class="social-list__item"><a class="social-list__link" href="https://www.instagram.com/banelurcham/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/dlb_0"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.tiktok.com/@laneburcham?lang=en"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+    </footer>
+
+    <script src="../index.js"></script>
+
+</body>
+
+</html>
+
+****************************************************** CSS ***********************************************************
+
+*,                          /* do this on every single project, makes life so mucheasier */
+*::before,
+*::after    {
+    box-sizing: border-box;     /* box-sizing: border-box is changing how padding is calculated within a width instead of adding on to the total width of something */
+}
+
+/* Custom Properties, update these for your own design
+   Below, we are defining these custom properties to use them later so we dont have to constantly remember or set pixel sizes or percentages */
+
+:root {
+    --ff-primary: 'Source Sans Pro', sans-seriff;       /* ff is for font-family */
+    --ff-secondary: 'Source Code Pro', monospace;   /* double hyphen (--) means its a custom property */
+
+    --fw-reg: 300;                          /* these are all variables you will plug in later when adding font-family, font-weight, font size and background color properties to selectors */
+    --fw-bold: 900;                         /* fw is for font weight */
+                                            /* in other words, you can define these now so later when you dont want to have to re-calculate font sizes or font-families or background colors
+                                            you can just use, background: var(--clr-dark); */
+    --clr-light: #fff;
+    --clr-dark: #303030;                    /* clr is for background color or color itself */
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 3rem;              /* Kevin Powell always sets his font sizes with rems */
+    --fs-h2: 2.25rem;           /* --fs- is for "font-size" and the selector of your choice, h, h2, h3, body */
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .60), /* you are defining your box shadow variable right here to be used elsewhere later */
+          0.125em 0.125em 0.25em rgba(0, 0, 0, .20);    /* this adds second shadow to give it more volume and make it look even blacker */
+    /* --bs is for box shadow variable and its values, 
+    --bs: (0.25em 0.25em = to the right and down a little bit)
+    0.75em is the blur and the rgba() is the black color of the shadow, higher the value between 0 and 1 means the darker the shadow */
+}
+
+@media (min-width: 800px)   {       /* pretty generic media query, works well with this design */ /* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries for more info, these are super important for responsive web design */
+    :root {                         /* here we are redefining font sizes to make them bigger for larger screen sizes */ 
+        --fs-h1: 4.5rem;               /* This means that 1rem equals the font size of the html element (which for most browsers has a default value of 16px). */
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/*                              General Styles                              */
+
+/* added this html element real late in the video (1:59:00) and this is to stop the "jump to" transition speed which is not user friendly */
+
+html {
+    scroll-behavior: smooth;            /* ESSENTIAL, the transition is so smooth from when you click on the nav bar link to actually smoothly jumping to that part of the page such as home or about me or work or services, dont even need javascript for this awesome function */
+}
+
+body    {
+    background: var(--clr-light);        /* using the var(custom-property) changes the background to whatever --clr-dark's value is, define the variables up top and plug them in below */
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;                   /* KP uses a line-height of 1.6 as a default line height for his projects */
+}
+
+section {
+    padding: 5em 2em;                   /* provided a third of an inch space between the window border on both sides of the sections under the header, HUGE */
+}
+
+img {
+    display: block;                     /* using display: block; prevents issues that sometimes comes up with images */
+    max-width: 100%;                    /* uses max-width so images don't grow bigger or overflow their parents */
+}
+
+strong { font-weight: var(--fw-bold) }
+
+:focus  {                                       /* added at 1:06:00 after the buttons rules were added, ":focus" reads: "when everything has a focus state" /// The :focus CSS pseudo-class represents an element (such as a form input) that has received focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. */
+    outline: 3px solid var(--clr-accent);       /* creates outline border box around clicked item to represent it has been interacted with */
+    outline-offset: 3px;                        /* adding this makes people notice the outline rule above more obviously */
+}
+
+/*                                Buttons                                */
+
+.btn   {
+    display: inline-block;                          /* using inline-block because the button is a span element and spans are inline-block elements */
+    padding: .5em 2.5em;                            /* sorta gives it its size */
+    background: var(--clr-accent);                  /* button background color */
+    color: var(--clr-dark);                         /* text color itself*/
+    text-decoration: none;                          /* since it can be set on a link we put none */
+    cursor: pointer;                                /* this is in case you ever put it on a button instead of putting it on a link, very important */
+    font-size: .8rem;
+    text-transform: uppercase;                      /* changes the text to all caps */
+    letter-spacing: 2px;                        
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {                                 /* this makes the box transform a lil bigger when you hover over it and it shrink back down to its normal size when not hovering over it */
+    transform: scale(1.1);
+}
+
+/*                              Typography                              */  /* in other words above is more or less about sizing and spacing and below is where we start customizing text */
+
+h1,
+h2,
+h3  {
+    line-height: 1.0;                               /* line-height was changed from 1.1 to 1 for better/cleaner looking spacing between the titles and subtitles*/
+    margin: 0;                                     /* started out with margin: 0; but he said we might have to revisit this */ /* comment here if revisited and give exaplantion why we changed it */
+}
+
+h1  { font-size:var(--fs-h1) }
+h2  { font-size:var(--fs-h2) }                      /* cant be done like they are above because they all need the same font but not the same size */
+h3  { font-size:var(--fs-h3) }
+
+.section__title {
+    margin-bottom: .25em;                       /* fixed the space between the title and subtitle underneath the element for all the titles/sections of the page */
+}
+
+.section__title--intro  {
+    font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong   {              /* also called compound selectors, KP says he's usually not fond of these but every now and then you'll learn what rules you can break */
+    display: block;                            /* setting the display to block for this element keeps "Paradoc" on its own line constantly, aka moved it from the right of "Hi, I am" and placed "Paradoc" below "Hi" */
+}
+
+.section__subtitle {
+    margin: 0;                                 /* why margin: 0; ??? Why is margin and padding set to 0? Answer === There is no space between the inner (content) box and the outer (border) box so there is zero padding. Margin is just the space outside the border. This is important for how you want your element to appear when other elements are nearby.*/
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about   {
+    background: var(--clr-accent);             /* the p tag under the about me section is the green line you made */
+    padding: .25em .5em;                     /* tucks front-end dev text to the left and adds space above and below to fit nice and center in the blue background over the image */
+    font-family: var(--ff-secondary);          /* using other font under the section title font to stand out */
+    margin-bottom: 1em;                     /* provided space underneath "front end developer" */
+}
+
+.section__subtitle--work    {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);            /* this is for layout purposes only thats why its ruled out up here */
+    margin-bottom: 2em;
+}
+
+/*                  End of general FOUNDATIONAL customization                    */
+
+/*                                   Header                                     */  /* 1st thing to do once all of the foundation is laid (everything above and on HTML originally */
+
+/* started out as "nav { display: none }" why display none? For example, if you're building a responsive site, you might include elements that are available for one display size but not for others. You can use display: none to hide that element, and then turn it back on with media queries later. */
+
+header  {
+    display: flex;                  /* this took my logo and pushed it to the irght side and now my list is vertically aligned with the right side of the page */
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo {
+    max-width: 100px;               /* made my logo 100px wide */
+}
+
+.nav {
+    position: fixed;                   /* brought my vertical nav list over to the left and a quarter of on top of my logo, also this makes the list stay in that position even if you scroll down */
+    background: var(--clr-dark);        /* background color for nav bar */
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;                    /* all 4 of these mean from 0 which means it will take up the entire screen */
+    right: 0;                   /* to put this into perspective, you took your lil 4:3 box and completely covered the whole page over the icons and everything so add a z-index */
+    z-index: 100;               /* 100 pulls this div .nav in front of everything else when the navigation bar is open, it will take up the whole screen with this background color and the links inside of it */
+
+    transform: translateX(100%);        /* this is the action of the nav bar sliding out, started with 100% and it dissappeared so we tried 50% next, 50% covered up half the screen because the viewport percentage is 100%, leaving at 0 for the time being // changed the translate back to 100% after styling .nav__links, .nav__list and .nav__link:hover, now we create hamburger button to bring this out when we click it */
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);     /* or ease-in-out, we could def use this according to KP */
+
+
+}
+
+.nav__list  {
+    list-style: none;
+    display: flex;
+    height: 100%;           /* moved all the nav links next to each other */
+    flex-direction: column;         /* sorts the nav links all down the left side */
+    justify-content: space-evenly;  /* provides space between al the nav links vetically and moves them down a little  */
+    align-items: center;        /* aligns the links down the center of the page */
+    margin: 0;
+    padding: 0;                 /* adding the margin 0 and padding 0 which should fix any weird issues with the alignment we were just having */
+}
+
+.nav__link  {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);            /* started with h2 but that's prolly gonna be too big */
+    text-decoration: none;
+}
+
+.nav__link:hover    {
+    color: var(--clr-accent);           /* color of hover on the nav links */
+}
+
+/* added this .nav-toggle aka the button itself after adding the pseudo elements hamburger before and after and all that */
+.nav-toggle {
+    padding: .5em;         /* shrunk the sides to make it skinnier */
+    background: transparent;        /* removes background color */ 
+    border: 0;          /* so that my border is turned off and now its just the black lines */
+    cursor: pointer;
+    position: absolute;
+    right: 1em;             /* reads 1em from the right of the page */
+    top: 1em;           /* if you wnt to play it safe */
+    z-index: 1000;         /* this gives the ability of the button to always be available meaning it doesnt hide when the transition occurs, change the translate from 100% to 0% and you'll know what i mean */
+
+}
+
+
+/* added this below right after first five lines of the javascript was made */
+
+.nav-open .nav  {               /* we created a class without defining it in a specfic element, just by using javaScript */
+    transform: translateX(0);       /* this makes the nav bar slide in and out with each click of the hamburger button */ 
+}
+
+.nav-open .nav-toggle   {
+    position: fixed;            /* locks the hamburger button into place whether you scroll up or down*/
+}
+
+.nav-open .hamburger    {
+    transform: rotate(.625turn);       /* adds cool little rotate effect every time the hamburger button is clicked */
+}
+
+.nav-open .hamburger::before    {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after    {
+    opacity: 0;                         /* adding these pseudo selectors to the mix changes the hamburger button to an X all in the same click */
+}
+
+/* at this point, we've made the x and the hamburger button switch back and forth but we need to make sure the nav bar closes when we click on the section we want to jump to, go back to javascript and add lines [ 2, and 8-12 ] */
+
+/* Creating the hamburger button, the compolicated way cause it opens up extra possibilities */
+
+.hamburger  {
+    display: block;
+    position: relative;                    /* adding positon relative because we'll be using pseudo elements and will make everything easier in the long run */
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after   {
+    background: var(--clr-accent);         /* changes colors of the hamburger button icons thick blak lines */
+    width: 2em;                         /* *** creates card shaped box with a thick black dash in the middle in the top right corner */
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,        /* EXAMPLE OF PSEUDO ELEMENTS = ::before and ::after, requires at least content: ''; to execute */
+.hamburger::after   {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;                       /* left and right match the other one because we have "position: relative;" above in the .hamburger class, if not for having this, there would be a long bar across the top of the screen from left to right */            
+
+    /* he added all this and said 'we're gonna refactor on the fly here' because we have a lot of similarities, need to break some of these off  */
+}
+
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }      /* this creates each line above and below the thick black line to create the hamburger icon */
+
+/*                  Setting up the Intro Section            */ /* 1st thing to do once all of the foundation is laid (everything above and on HTML originally */
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px)   {                               /* again, generic media min-width size */
+    .intro {
+        display: grid;
+        width: min-content;                                 /* width: min-content; shrinks it down, will match the content sizing */
+        margin: 0 auto;                                     /* we want this content to stick in the middle when the page widens, this does has the same concept as the padding: 5em 2em; secures content in the middle of the screen, keeps content nice and centered */
+        grid-column-gap: 1em;                               /* added spacing between Pff Cover image and "Hi, I am Paradoc" and "front-end dev" below that */
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+        /* background: black;  uncomment this to see the .intro box */
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;                     /* this is where we started adding the img shadows/box shadows */
+        z-index: 2;                             /* positions img at the top of the order aka above the blue background line */
+
+    }
+
+    .section__subtitle--intro {                 /* puts the pff cover cleanly to the left of the hi phrase and paradoc and fits front end dev text and background boxed in under the 2 previous elements */
+
+        align-self: start;
+        grid-column: -1 / 1;            /* align-self: start; ?????? grid-column: -1 / 1; ?????? google these */
+        grid-row: 2;                    /* moves the front end dev up behind the img */
+        text-align: right;              /* moves the front end dev to the right of its line/block */
+        position: relative;             /* moves the front end dev blue background over the img */
+        /*left: -1.0em;*/  /* moved the front end dev over 1em to the left of the x axis to line it up center underneath Paradoc, but is still overlapping the img */
+        width: calc(100% + -1.5em);      /* this is what these types of things are made for when wanting to position something absolutely without using "position: absolute;" we want to avoid using absolute positioning */ /* makes the width of the front end dev blue background 100% width + 1.5em and then it lines up everything nice and perfectly */
+
+    }
+}
+
+/*                              My Services Section                             */ /* start by setting up colors first */
+
+.my-services    {
+    background-color: var(--clr-dark);
+    background-image: url(..media/services-bg.jpg);                 /* use your own file here for baxkground image like a desk in the background of the body thats blurred */
+    background-size: cover;
+    background-blend-mode: multiply;                                /* what the hell is this === The background-blend-mode CSS property sets how an element's background images should blend with each other and with the element's background color. so if i had a black background and a background image of a hot air balloon in the sky, it would be mixing black to the image to make it blend, not super neccessary but get some practice with it */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services    {
+    color: var(--clr-accent);                   /* changed "What I do" from white to teal/light green */
+    position: relative;                         /* adding relative positioning before adding the margin because we have the psuedo element (.section__title--services::after) we want to put on it */
+
+}
+
+.section__title--services::after    {              /* ***adding the little white line below What I do using this pseudo element to show where the section title begins before the text below it*** */
+    content: '';                                    /* have to have content in here even if there's no value or your custom properties wont show */
+    display: block;                                 /* can use display block or display position either one */
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;                         /* 0.5em is giving us space on the top, auto for left and right and 1em space on the bottom */
+    background: var(--clr-light);                   /* instead of using var(--clr-light), if you wanted to always use the same color as the "What I do" text, eneter { background: currentColor; } */
+    opacity: 0.5;                                   /* makes the line not stand out as much, treated more like a design element now */
+}
+
+.service    {
+    max-width: 500px;                               /* added this after media query below because text was too long for big screens */
+    margin: 0 auto;                                 /* when we added this, we had to add margin-left: auto; and margin-right: auto; to the media query below under the .services class rules */
+}
+
+.services   {
+    margin-bottom: 4em;
+}
+
+@media (min-width: 800px)   {
+    .services   {
+        display: flex;
+        max-width: 1000px;      /* these 3 rules right here took the subtitles and and the text below them into 3 columns on the same block */
+        margin-left: auto;      /* added after .services { margin-bottom: 4em; } was added, these added spacing above the button */
+        margin-right: auto;     /* added after .services { margin-bottom: 4em; } was added, added these so that they dont overwrite that margin bottom above */
+
+    }
+
+    .service + .service {           /* this is pretty much how you add gaps with flex box */ /* also why the + ? */
+        margin-left: 2em;
+    }
+}
+
+/*                              The About Me Section                         */
+
+.about-me   {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img  {
+    box-shadow: var(--bs);              /* lookup how to set effective and long term custom property variables */
+}
+
+@media (min-width: 600px)   {           /* KP says he uses no more than 1-2 media querys (@media) per section */
+    .about-me   {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas:                /* this basically put the img on the right side, Who I am at the top left and below is the blue background underline and below that is the text */
+            "title img"
+            "subtitle img"              /* need a better understanding of why he uses these strings or selectors under the grid-template area */
+            "text img";   
+        grid-column-gap: 2em;           /* obviously this created gaps but it fixed the problem of the text being too long and under the img on the right */
+    }
+
+    .section__title--about  {
+        grid-area: title;
+    }
+
+    .section__subtitle--about   {           /* effecting the blue underlining box, 1:16:00 */
+        grid-column: 1 / -1;            /* " 1 / -1 " goes from 1 side all the way over to the other side */
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 2em);           /* after adding these last few properties, the text will no longer touch or go over the image */
+    }
+
+    .about-me__img  {
+        grid-row: 1 / -1;       /* which means the img is starting at the top and ending at the (bottom) last row automatically */
+        grid-column: 2;
+        position: relative;        /* added this and the green underlining subtitle bar went behind the img */
+        z-index: 2;
+    }
+}
+
+
+/*                              My Wrok / The Portfolio Section                            */
+
+.my-work    {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.portfolio  {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); you can use this but below is great for a case like this */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));        /* if you're using auto-fit, minmax(x, y) must follow, also this means each column cant be any smaller than 300 pixels and will grow if it needs to */
+    /* he shows we need to add this below for smaller screens and make it to where they dont shift into 2 columns */
+    /* can add max-width: property here but that would need some calculating, he said he's gonna leave it off, but if you did use max-width: also use a margin: 0 auto; to keep it all centered on the screen */
+    /* max-width: 100%;
+    margin: 0 auto; */
+
+}
+
+.portfolio__item    {
+    background: var(--clr-accent);                      /* wont see them because these are images */
+    overflow: hidden;                                   /* keeps the extra img scale popping out from showing outside the confines of the box's border, prevents that ghostly pop out effect */
+}
+
+.portfolio__img {
+    transition:
+        transform 750ms cubic-bezier(.5, 0, .5, 1),     /* what is a cubic-bezier and what do the values represent, 750ms makes the scale pop out slow when hovering I know that much, */
+        opacity 250ms linear;
+}
+
+.portfolio__item:focus  {
+    position: relative;                             /* fixes how the outline around the item will act/place and not hide 2 lines or 3 depending on what position its lying in */
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img   {
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+
+/*                              Adding the Social Icons with Font Awesome                            */
+
+/*      added the font-awesome reference link into heado of html to make the social icons show up      */
+
+
+
+/*                                  Styling the Footer                                   */
+
+
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+.footer a   {
+    color: inherit;             /* takes on --clr-accent custom property since this is a compound child class element mix, also you dont need a ";" if its just one property per element */
+    text-decoration: none;
+}
+
+.footer__link   {
+    
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,                /* footer link = email, .social-list__link is the social icons */
+.social-list__link:hover    {
+    opacity: .7;                /* gives the hover over these icons a little darker/see through */
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.social-list    {
+    list-style: none;               /* takes away the dots */
+    display: flex;                  /* sorts the icons */
+    justify-content: center;        /* moves icons to the middle */
+    margin: 2em 0 0;                /* added the extra 0 because we have a top and bottom margin below thats setting things a little off
+                                        margin: 10px 5px 15px;
+                                        top margin is 10px
+                                        right and left margins are 5px
+                                        bottom margin is 15px */
+    padding: 0;                     /* add padding 0 to prevent the list looking off center */
+
+
+}
+
+.social-list__item  {
+    margin: 0 .5em;                 /* space between each logo, margin: 0 .5em;
+                                        top and bottom margins = 0
+                                        right and left margins = .5em */
+    
+}
+
+.social-list__link  {
+    padding: .53em;                 /* adds .53em padding on all sides, provides even more in-depth spacing between the links */
+}
+
+
+/*                              Setting up the Naviagtion Styles                             */
+
+/* this is where we remove the "nav { display: none }" under the header */
+
+
+
+/*                              JAVASCRIPT TIME           1:51:00                   */
+
+
+/*                              Individual Portfolio Item Styles          Portfolio template html required                  */
+
+
+.portfolio-item-individual  {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;                 /* if text is too long you can adjust the max-width */
+}
+
+.portfolio-item-individual p {
+    max-width: 800px;               /* you can play with this 800px number or even 600 */
+    margin-left: auto;
+    margin-right: auto;             /* we want to keep our top and bottom margins the default cause it means we're getting the spacing that would take it off, pictures stand out longer and wider than the text below it to stand out more */
+}
+
+/* we then added 'href="index.html#services"', 'href="index.html#about"', 'href="index.html#work"' to the respected nav list items to take you to different pages, 
+^^^ THIS IS HUGE ^^^ */
+
+
+*************************************************** JAVASCRIPT *****************************************************
+
+const navToggle = document.querySelector('.nav-toggle');        // which is going to look for my .nav-toggle class
+const navLinks = document.querySelectorAll('.nav__link');
+
+navToggle.addEventListener('click', () => {            // 'click', () => {} reads = when we click navToggle, do this as follows inside the brackets
+    document.body.classList.toggle('nav-open');         // haven't made a nav-open up till this point so this is being added now, to test this - add .nav-open to your css and change the background to red and every time you click the button it will swap back and forth from red to white from red to white, keyword toggling
+})
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+    })
+})

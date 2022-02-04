@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>My Work</title>
+    <!-- where we'd put a normalize href link, google it, makes it easier to work with all websites -->
+    <!-- scrimba stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.win.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfr0j+BmwXdxFgVK/Kvc=" crossorigin="anonymous">      
+
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">     <!-- may need extra link or source for this font to show up, wait to see if it plays out -->
+    <link rel="stylesheet2" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/0f33447b4b.js" crossorigin="anonymous"></script>       <!-- the link reference to allow the social icons to show up -->
+
+</head>
+
+
+
+
+<body>
+
+    <header>
+        <div class="logo">      <!-- we put this image in a div in case we might want to set this up as an svg, google svg -->
+            <img src="media/PS Cover.JPG" alt="PS Cover">   <!-- logo image -->
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">  <!-- this is our nav button to open and close our navigation bar/hamburger button, also, aria-label describes what this button is being used for, important for accessibility reasons -->
+            <span class="hamburger"></span>                        <!-- this will be our hamburger button itself-->
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">          <!-- using underscores implies this is a subcomponent (child) of the parent class "nav" -->
+                <li class="nav__item"><a href="index.html" href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="aboutme.html" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="mywork.html" class="nav__link">My Work</a></li>            <!-- in case you get stuck redirecting to certain parts of the page remember this = "the section itself needs an id="top" or id="bottom" and the link itself, aka <a> needs an href="top" or href="bottom" -->
+            </ul>                                                                                   <!-- another example of the statement above, the links href = #home will take you to the home section of the page because that section has an id of home -->
+        </nav>
+    </header>
+
+
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about"></p>    <!-- this p tag is the green line on the screen lmao -->
+
+        <div class="about-me__body">
+            <p>My name is Lane Burcham, I'm 26 years old, I'm from Memphis, TN (901 Gang) and this is my personal website!</p>
+            <p>I created this website as practice for my web development skills. I may not know where I'm headed with all of this but the money's worth giving it a try ;)</p>
+        </div>
+
+        <img src="media/new fade.JPG" alt="new fade" class="about-me__img">
+    </section>
+
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">My Backstory</h2>
+        <p class="section__subtitle section__subtitle--about"></p>    <!-- this p tag is the green line on the screen lmao -->
+
+        <div class="about-me__body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ipsum modi cum animi itaque? Eaque a deleniti quisquam cumque ut, ipsum optio blanditiis culpa vel, magni dolorum quaerat porro! Assumenda nisi necessitatibus, sit fuga non rem cumque dolor repudiandae? Tempore voluptatibus iusto labore, ratione ipsa quisquam veritatis? Praesentium similique quo minus repudiandae assumenda, exercitationem temporibus dolores quae numquam, unde porro culpa beatae laudantium commodi accusamus quis optio hic et dicta distinctio blanditiis architecto incidunt. Omnis et obcaecati incidunt accusantium, est ipsam cumque, possimus ducimus, atque nostrum nemo placeat aut hic quasi ipsum eos suscipit blanditiis voluptas. Id facilis maiores quibusdam.</p>
+        </div>
+
+        <img src="media/new fade.JPG" alt="new fade" class="about-me__img">
+    </section>
+
+
+
+    <script src="../index.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <a href="laneaburcham@gmail.com" class="footer-link">laneaburcham@gmail.com</a>
+    <ul class="social-list">
+            <li class="social-list__item"><a class="social-list__link" href="https://www.facebook.com/lane.burcham.5/"><i class="fab fa-facebook"></i></a></li>      <!-- "fab" stands for "font-awesome-brand" -->
+            <li class="social-list__item"><a class="social-list__link" href="https://www.instagram.com/banelurcham/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/dlb_0"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.tiktok.com/@laneburcham?lang=en"><i class="fab fa-tiktok"></i></a></li>
+    </ul>
+
+    <p>Click the button below to print this page!</p>
+    <button class="btn" onclick="print_current_page()">Print this page</button>
+</footer>
+
+</html>

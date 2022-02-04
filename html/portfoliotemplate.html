@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Paradoc Portfolio Website</title>
+    <!-- where we'd put a normalize href link, google it, makes it easier to work with all websites -->
+    <!-- scrimba stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.win.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfr0j+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">     <!-- may need extra link or source for this font to show up, wait to see if it plays out -->
+
+    <script src="https://kit.fontawesome.com/0f33447b4b.js" crossorigin="anonymous"></script>       <!-- the link reference to allow the social icons to show up -->
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">      <!-- we put this image in a div in case we might want to set this up as an svg, google svg -->
+            <img src="media/PS Cover.JPG" alt="PS Cover">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">  <!-- this is our nav button to open and close our navigation bar, also, aria-label describes what this button is being used for, important for accessibility reasons -->
+            <span class="hamburger"></span>                        <!-- this will be our hamburger button itself-->
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">          <!-- using underscores implies this is a subcomponent (child) of the parent class "nav" -->
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>            <!-- in case you get stuck redirecting to certain parts of the page remember this = "the section itself needs an id="top" or id="bottom" and the link itself, aka <a> needs an href="top" or href="bottom" -->
+            </ul>
+        </nav>
+    </header>
+
+<!-- portfolio template part below, added to original html index with just the intro section -->
+
+    <section class="intro" id="home">               <!-- he mainly uses classes for styling and id's for anchoring, google-->
+    <h1 class="section__title section__title--intro">
+        Hi, I am <strong>Paradoc</strong>
+    </h1>
+    <p class="section__subtitle section__subtitle--intro">front-end dev</p>
+    <img src="media/IMG_4120.jpg" alt="PFF Cover" class="intro__img">
+    </section>
+
+    <div class="poprtfolio-item-individual">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae praesentium vero quo veniam rem iusto, iure et repellendus numquam, non sed cumque reprehenderit, ipsa architecto maiores. Ad doloremque cupiditate nemo!</p>
+        <img src="media/PS Cover.JPG" alt="" class="intro__img">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, architecto id cupiditate eaque dolores non consequuntur repellat fugit laudantium perferendis harum deleniti recusandae quibusdam quos odio quam facilis aspernatur debitis?</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis fugiat adipisci repudiandae, sunt facilis mollitia ad incidunt esse at! Vero cum aut placeat voluptates, nam perspiciatis obcaecati sit ab.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="laneaburcham@gmail.com" class="footer-link">laneaburcham@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item"><a class="social-list__link" href="https://www.facebook.com/lane.burcham.5/"><i class="fab fa-facebook"></i></a></li>      <!-- "fab" stands for "font-awesome-brand" -->
+            <li class="social-list__item"><a class="social-list__link" href="https://www.instagram.com/banelurcham/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/dlb_0"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.tiktok.com/@laneburcham?lang=en"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+    </footer>
+
+    <script src="../index.js"></script>
+
+</body>
+
+</html>
